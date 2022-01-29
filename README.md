@@ -1,16 +1,27 @@
-# quiz_app
+## Quiz App
 
-A new Flutter project.
+This app is just a Quiz Game. There would be some random quizes. Try to solve them as much as you can. 
 
-## Getting Started
+# Get Started
 
-This project is a starting point for a Flutter application.
+* Fork the the project
+* Clone the repository to your local machine 
+* Checkout the master branch 
+* run command - 'flutter run'
 
-A few resources to get you started if this is your first Flutter project:
+# Developed by
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+Prabhneet Narula
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Get in touch
+
+* [Twitter](https://twitter.com/PrabhneetNarula)
+
+## Contribute
+
+1. Check out the issues .
+2. Comment 'want to work on this' to work on the particular issue and wait for the admin to assign you with the task.
+3. Make required changes and commit (git commit -m 'Added some feature or fixed this issue').
+4. Create new Pull Request
+
+## Happy Fluttering!
