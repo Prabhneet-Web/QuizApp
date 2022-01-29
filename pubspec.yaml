@@ -78,6 +78,8 @@ flutter:
     - family: Horizon
       fonts:
         - asset: lib/assets/fonts/Horizon.otf
+        - asset: lib/assets/fonts/Horizon.ttf
+
           style: italic
   #   - family: Trajan Pro
   #     fonts:
