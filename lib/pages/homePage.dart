@@ -107,7 +107,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
               const SizedBox(
                 height: 10,
               ),
-              Text(
+              const Text(
                 "Play to Answer Some of the Random Questions!",
                 style: TextStyle(color: Colors.white60),
               ),
