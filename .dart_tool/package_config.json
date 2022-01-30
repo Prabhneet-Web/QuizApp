@@ -92,6 +92,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "page_transition",
+      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/page_transition-2.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "path",
       "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
       "packageUri": "lib/",
@@ -158,7 +164,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-01-29T17:40:41.379271Z",
+  "generated": "2022-01-30T05:04:50.276561Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }
