@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         body: Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-              image: AssetImage("lib/assets/images/Quiz1.webp"),
+              image: AssetImage("lib/assets/images/Quiz4.jpg"),
               fit: BoxFit.cover)),
       child: Container(
           decoration: BoxDecoration(
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   const SizedBox(
                     width: 15,
-                    height: 180,
+                    height: 170,
                   ),
                   const Text("Play To",
                       style: TextStyle(
@@ -48,6 +48,26 @@ class HomePage extends StatelessWidget {
                             fontFamily: "Horizon"))
                   ], isRepeatingAnimation: true, totalRepeatCount: 30)
                 ],
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 8, right: 8),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    gradient: const LinearGradient(colors: [
+                      Color.fromARGB(255, 200, 152, 67),
+                      Color.fromARGB(255, 255, 219, 143)
+                    ])),
+                child: MaterialButton(
+                  onPressed: () {},
+                  minWidth: double.infinity,
+                  child: const Text(
+                    "Start",
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
               )
             ],
           )),

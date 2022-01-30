@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		qHDYwVH3ZVIKNCOT6vzXW9TXo/A=
+		9iS6LzibIzxzaQfRiLkLZQz2Mxg=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,15 +118,15 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		66M41j53kF+yDiy0ZLXFKGkBer0=
+		Zg8kTW97F1hDfzJ/Uxmia3fFy8A=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		D8LnjUr0g/Drz7O04Ke8Bfie2V0=
+		UYpQ0Ypfym78umD8po2hmtdQSXM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
-		uEfu2B1gTlF13VTMbeXAqpl3HQg=
+		76yycqvNsHb7fORlFBs8mB+m1TY=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
@@ -142,11 +142,15 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		KgYS7tUpnCfluHe2soXlr2LyVCs=
+		G1dtWZvULmyXcZ6C9zVYZySpZeo=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.otf</key>
 		<data>
 		F5DGxaRZcXuZRyRKiVZFzSqgNFA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.ttf</key>
+		<data>
+		U/GB1dOCnEquc43Vh2m84j8hkRw=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz1.webp</key>
 		<data>
@@ -449,7 +453,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8KsYSf4pQozuZFoTAVn+sX4V/djfn6t7t6Re0IaMfRY=
+			XAUVO2daj5dLUyBc4e1RtS3OnXgNHCZ8Fm/a0/N2SJI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -463,21 +467,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/SfmBjS+Blz6zj55S/xpJ/29Y6kwPqynCjA4G6dYu4U=
+			OwGi+43DYN7GPJZZAqvbfv6oDaW1zL+zzcRJnpUpxcQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PKcypJpAV3tcpVwrwB92nRyH7V361ojVgwVAguau45Y=
+			Hi+HGfKAmPu94gFy9uugMDTRtwSoMaWVtasrwRx4Z8E=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ngbr6Wu3+4qiFv3ycLpKbgsJ9ScBYHzihKO1NYw7Iyw=
+			KDAonrqNkK3pZyZOAEt7VnLKhdmQLE6vY28RyKYDwbQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
@@ -505,7 +509,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			s7qmlCLPAtuBZyimCie7hcQGXJdLRNAc7g2j+O9snRI=
+			Hld2DHTy3nx6MDHuxsix549nvh8t1ixtJHd+MWo3jA0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.otf</key>
@@ -513,6 +517,13 @@
 			<key>hash2</key>
 			<data>
 			knTk7IhCwD0/HCO3iEQnG3Ua9gRGQotpCXmP1bn1Wi8=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			kygI3f0/q2Lp+vEjpYTo9KTyGI7b5C0lBom3OOmN82Q=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz1.webp</key>
