@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             fontSize: 50,
                             color: Colors.white,
                             fontFamily: "Horizon"))
-                  ], isRepeatingAnimation: true, totalRepeatCount: 30)
+                  ], isRepeatingAnimation: true, totalRepeatCount: 50)
                 ],
               ),
               Padding(
