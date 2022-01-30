@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           ])),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
                 children: [
@@ -104,9 +104,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 30,
-              )
+              const SizedBox(
+                height: 10,
+              ),
+              Text(
+                "Play to Answer Some of the Random Questions!",
+                style: TextStyle(color: Colors.white60),
+              ),
+              const SizedBox(height: 30)
             ],
           )),
     ));
