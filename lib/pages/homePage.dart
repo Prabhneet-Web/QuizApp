@@ -55,27 +55,37 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              const Padding(
+                padding: EdgeInsets.only(left: 8.0),
+                child: Text(
+                  "Let's Play Quiz!",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 60,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
               Row(
                 children: [
                   const SizedBox(
                     width: 12,
-                    height: 170,
+                    height: 100,
                   ),
                   const Text("Play To",
                       style: TextStyle(
-                          fontSize: 50,
+                          fontSize: 30,
                           color: Colors.white,
                           fontWeight: FontWeight.bold)),
                   const SizedBox(width: 15),
                   AnimatedTextKit(animatedTexts: [
                     RotateAnimatedText("WIN!",
                         textStyle: const TextStyle(
-                            fontSize: 50,
+                            fontSize: 30,
                             color: Colors.white,
                             fontFamily: "Horizon")),
                     RotateAnimatedText("LOSE!",
                         textStyle: const TextStyle(
-                            fontSize: 50,
+                            fontSize: 30,
                             color: Colors.white,
                             fontFamily: "Horizon"))
                   ], isRepeatingAnimation: true, totalRepeatCount: 50)
