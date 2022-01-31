@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           decoration: BoxDecoration(
               gradient: LinearGradient(begin: Alignment.bottomCenter, colors: [
             Colors.black.withOpacity(0.9),
-            Colors.black.withOpacity(0.7),
+            Colors.black.withOpacity(0.8),
             Colors.black.withOpacity(0.2)
           ])),
           child: Column(
