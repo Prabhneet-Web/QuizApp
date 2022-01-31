@@ -12,15 +12,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late AnimationController _animationController;
-  late Animation<double> _animation;
 
   @override
   void initState() {
     _animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 100));
+        vsync: this, duration: const Duration(milliseconds: 10));
 
-    _animation =
-        Tween<double>(begin: 1.0, end: 25.0).animate(_animationController);
     super.initState();
   }
 

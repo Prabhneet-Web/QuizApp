@@ -110,7 +110,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		ShHK26XHQv4J33y0H0QFTzTrc/c=
+		+WllnDlegQ5iqO7lQLnT9nFEezA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -118,11 +118,11 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		yMzblDJz1RxC0rUFmtA3smLjSQU=
+		/vXSa+I3P0Vwx+1GRAmZ6jx+csU=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		xlA2V5MLu+fmRWaryrNlITdy6dA=
+		ptO+M1dMpNGX10H5zVZVTRoAVyA=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -130,7 +130,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/NOTICES.Z</key>
 		<data>
-		tT1XRTtmRhP9YlF0KNBrRHhpMyU=
+		BsUNz4853an4Ng6exVKOyppEpgk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
 		<data>
@@ -142,7 +142,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Tn4bkqFxCS2I0mPmtIULRbobt40=
+		ANgX4gydQhq+DnhTsw52Bg+FLT0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.otf</key>
 		<data>
@@ -151,18 +151,6 @@
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.ttf</key>
 		<data>
 		U/GB1dOCnEquc43Vh2m84j8hkRw=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz1.webp</key>
-		<data>
-		KR9yySynLaVS9VrCyxFDDO7qdwc=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz2.webp</key>
-		<data>
-		ZmV0mfmNoUacIHtnHFatlTAVfRE=
-		</data>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz3.webp</key>
-		<data>
-		Oe0BB5IH/VJuYyHiRRhMuPyhbfg=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz4.jpg</key>
 		<data>
@@ -457,7 +445,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1b+7IL4yZEtqefnPToheg8VVb1C6rOTqkdYa4zeR9xU=
+			byh5wrqPKmroD+Ondq3KuzG/Ez+kQp6B45Pt134bh9Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -471,14 +459,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qITy8W06h9U4Ec816Q6+CY5AwyqKnOm1aEUWuhI3ZJU=
+			tFSUAqt193xOERi8EPpmoM5raVYbyuQzlhLD2USF1mk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			shVWURoIw6M/wfBI9DzbqsgYKwq8xE6UqZmRU2NmKmY=
+			uECJBQzWU8W4/+xuH9ASfthpI+2Zv0XV0jrUFoRGyiM=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -492,7 +480,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IFrVl35r9g8NbeVjo/6/rKV9rdS5FZZi3rAD04WLiho=
+			38ZQsPt6sBgnncCdLO52YxRdhe/6NVZDnTmmXHbRLAw=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/fonts/MaterialIcons-Regular.otf</key>
@@ -513,7 +501,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			HVPDoysrtVq55ap5OYl+uZk0sdg0whLQS/ogfdDy9Qc=
+			7nXg7ZOGwQFMZPgyEIN+bMzolJTOFbyVzWU3m2Lf/2Y=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/fonts/Horizon.otf</key>
@@ -528,27 +516,6 @@
 			<key>hash2</key>
 			<data>
 			kygI3f0/q2Lp+vEjpYTo9KTyGI7b5C0lBom3OOmN82Q=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz1.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			81SxUzW5spW7PvU3FnpdaqdbWka4atzoJfJf1yhaTz0=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz2.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			sUEFRopL/DVc7AVu06J6n+jWWFvSVYCs6mB/z1a35Ss=
-			</data>
-		</dict>
-		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz3.webp</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			OqJEQBxppfM0yTy8mqUMgnAB7Q23pKClboi9AFEmqkc=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/lib/assets/images/Quiz4.jpg</key>
