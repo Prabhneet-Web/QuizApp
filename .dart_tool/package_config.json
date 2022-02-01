@@ -74,24 +74,6 @@
       "languageVersion": "2.12"
     },
     {
-      "name": "frideos",
-      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/frideos-1.0.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.0"
-    },
-    {
-      "name": "http",
-      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/http-0.13.4",
-      "packageUri": "lib/",
-      "languageVersion": "2.14"
-    },
-    {
-      "name": "http_parser",
-      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0",
-      "packageUri": "lib/",
-      "languageVersion": "2.12"
-    },
-    {
       "name": "lints",
       "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1",
       "packageUri": "lib/",
@@ -120,12 +102,6 @@
       "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
-    },
-    {
-      "name": "rxdart",
-      "rootUri": "file:///Users/prabhneetnarula/Development/SDKs/Flutter/.pub-cache/hosted/pub.dartlang.org/rxdart-0.24.1",
-      "packageUri": "lib/",
-      "languageVersion": "2.6"
     },
     {
       "name": "sky_engine",
@@ -188,7 +164,7 @@
       "languageVersion": "2.15"
     }
   ],
-  "generated": "2022-01-31T05:07:43.316377Z",
+  "generated": "2022-02-01T04:32:36.227648Z",
   "generator": "pub",
   "generatorVersion": "2.15.0"
 }
