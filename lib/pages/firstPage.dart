@@ -56,7 +56,10 @@ class _FirstPageState extends State<FirstPage> {
         ),
         centerTitle: true,
         actions: [
-          IconButton(icon: const Icon(Icons.emoji_emotions), onPressed: () {}),
+          IconButton(
+            icon: const Icon(Icons.emoji_emotions),
+            onPressed: () {},
+          ),
           const SizedBox(width: 15)
         ],
       ),
@@ -72,24 +75,19 @@ class _FirstPageState extends State<FirstPage> {
             if (_scoreTracker.isNotEmpty) ..._scoreTracker
           ],
         ),
-        _questions.isNotEmpty
-            ? Container(
-                width: double.infinity,
-                height: 130.0,
-                margin: const EdgeInsets.only(
-                    bottom: 10.0, left: 30.0, right: 30.0),
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 50.0, vertical: 20.0),
-                decoration:
-                    BoxDecoration(borderRadius: BorderRadius.circular(20)),
-                child: Center(
-                    child: Text(
-                  _answers[1]["answerText"],
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(fontSize: 20.0, color: Colors.black),
-                )),
-              )
-            : Container(),
+        Container(
+          width: double.infinity,
+          height: 70.0,
+          margin: const EdgeInsets.only(bottom: 5.0, left: 30.0, right: 30.0),
+          padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 20.0),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          child: const Center(
+              child: Text(
+            "Questions",
+            textAlign: TextAlign.center,
+            style: TextStyle(fontSize: 20.0, color: Colors.black),
+          )),
+        ),
         InkWell(
           onTap: () {},
           child: Container(
@@ -99,7 +97,7 @@ class _FirstPageState extends State<FirstPage> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(color: Colors.black)),
-            child: Text(
+            child: const Text(
               "Answer",
               style: TextStyle(fontSize: 15),
             ),
@@ -114,7 +112,7 @@ class _FirstPageState extends State<FirstPage> {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(color: Colors.black)),
-            child: Text(
+            child: const Text(
               "Answer",
               style: TextStyle(fontSize: 15),
             ),
@@ -123,13 +121,13 @@ class _FirstPageState extends State<FirstPage> {
         InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.all(15.0),
-            margin: EdgeInsets.symmetric(vertical: 5.0, horizontal: 30.0),
+            padding: const EdgeInsets.all(15.0),
+            margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 30.0),
             width: double.infinity,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
                 border: Border.all(color: Colors.black)),
-            child: Text(
+            child: const Text(
               "Answer",
               style: TextStyle(fontSize: 15),
             ),
@@ -139,7 +137,7 @@ class _FirstPageState extends State<FirstPage> {
         ElevatedButton(
           style: ElevatedButton.styleFrom(shadowColor: Colors.amber),
           onPressed: () {},
-          child: Text("Next Question"),
+          child: const Text("Next Question"),
         ),
         Container(
           padding: const EdgeInsets.only(
