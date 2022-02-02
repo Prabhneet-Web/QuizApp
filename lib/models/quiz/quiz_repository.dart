@@ -40,8 +40,9 @@ class QuizRepository extends BaseQuizRepository {
       if (response.statusCode == 200) {
         final data = Map<String, dynamic>.from(response.data);
         final result = List<Map<String, dynamic>>.from(data['results'] ?? []);
-        if (result.isNotEmpty)
+        if (result.isNotEmpty) {
           return result.map((e) => Question.fromMap(e)).toList();
+        }
       }
       return [];
     } on DioError catch (err) {
