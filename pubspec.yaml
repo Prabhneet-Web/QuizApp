@@ -43,6 +43,7 @@ dependencies:
   hooks_riverpod: ^1.0.3
   html_character_entities: ^1.0.0+1
   meta: ^1.7.0
+  http: ^0.13.4
   
   
 
