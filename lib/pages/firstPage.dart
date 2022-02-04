@@ -5,6 +5,7 @@ import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
+import 'package:quiz_app/assets/widgets/answers.dart';
 
 class FirstPage extends StatefulWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -71,6 +72,10 @@ class _FirstPageState extends State<FirstPage> {
     futureAlbum = fetchAlbum();
   }
 
+  List<Icon> __scoreTracker = [];
+  int _questionIndex = 0;
+  int _totalScore = 0;
+
   // final pageController = usePageController();
 
   @override
@@ -110,14 +115,18 @@ class _FirstPageState extends State<FirstPage> {
           child: Column(
             children: [
               Row(
-                children: const [Icon(Icons.check_box), Icon(Icons.clear)],
+                children: [
+                  if (__scoreTracker.length == 0) SizedBox(height: 20),
+                  if (__scoreTracker.length > 0) ...__scoreTracker
+                ],
               ),
               const SizedBox(height: 30),
               FutureBuilder<Album>(
                 future: futureAlbum,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return Text(snapshot.data!.questions[0]['question'],
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]['question'],
                         style: const TextStyle(fontSize: 17));
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
@@ -126,77 +135,22 @@ class _FirstPageState extends State<FirstPage> {
                 },
               ),
               const SizedBox(height: 25),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(13.0),
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 5.0, horizontal: 5.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    "Answer",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(13.0),
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 5.0, horizontal: 5.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    "Answer",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(13.0),
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 5.0, horizontal: 5.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    "Answer",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-              ),
-              InkWell(
-                onTap: () {},
-                child: Container(
-                  padding: const EdgeInsets.all(13.0),
-                  margin: const EdgeInsets.symmetric(
-                      vertical: 5.0, horizontal: 5.0),
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(20)),
-                  child: Text(
-                    "Answer",
-                    style: TextStyle(fontSize: 12),
-                  ),
-                ),
-              ),
+              Answer(),
+              Answer(),
+              Answer(),
+              Answer(),
               const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 200, 152, 67),
                     borderRadius: BorderRadius.circular(30)),
                 child: MaterialButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    setState(() {
+                      _questionIndex++;
+                      if (_questionIndex >= 9) _questionIndex = 9;
+                    });
+                  },
                   child: const Text("Next Question",
                       style: TextStyle(fontSize: 15)),
                 ),
