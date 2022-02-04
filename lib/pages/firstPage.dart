@@ -3,6 +3,7 @@ import 'dart:async' show Future;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter/services.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 
 class FirstPage extends StatefulWidget {
@@ -70,6 +71,8 @@ class _FirstPageState extends State<FirstPage> {
     futureAlbum = fetchAlbum();
   }
 
+  // final pageController = usePageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,9 +93,6 @@ class _FirstPageState extends State<FirstPage> {
         ),
         centerTitle: true,
         actions: [
-          // IconButton(
-          //   icon: const Icon(Icons.emoji_emotions),
-          //   onPressed: () {
           PopupMenuButton(
               child: const Icon(Icons.emoji_emotions),
               itemBuilder: (context) {
@@ -100,32 +100,106 @@ class _FirstPageState extends State<FirstPage> {
                   return const PopupMenuItem(child: Text("Hello"));
                 });
               }),
-          // },
-          // ),
           const SizedBox(width: 15)
         ],
       ),
       body: Container(
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 35),
           child: Column(
             children: [
+              Row(
+                children: const [Icon(Icons.check_box), Icon(Icons.clear)],
+              ),
               const SizedBox(height: 30),
               FutureBuilder<Album>(
                 future: futureAlbum,
                 builder: (context, snapshot) {
                   if (snapshot.hasData) {
-                    return Text(snapshot.data!.questions[3]['question']);
+                    return Text(snapshot.data!.questions[0]['question'],
+                        style: const TextStyle(fontSize: 17));
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
                   }
                   return const CircularProgressIndicator();
                 },
               ),
-              const SizedBox(height: 30),
-              const InkWell(
-                child: Text("Answer1"),
+              const SizedBox(height: 25),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(13.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 5.0, horizontal: 5.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    "Answer",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(13.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 5.0, horizontal: 5.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    "Answer",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(13.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 5.0, horizontal: 5.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    "Answer",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Container(
+                  padding: const EdgeInsets.all(13.0),
+                  margin: const EdgeInsets.symmetric(
+                      vertical: 5.0, horizontal: 5.0),
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      border: Border.all(color: Colors.black),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    "Answer",
+                    style: TextStyle(fontSize: 12),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 20),
+              Container(
+                decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 200, 152, 67),
+                    borderRadius: BorderRadius.circular(30)),
+                child: MaterialButton(
+                  onPressed: () {},
+                  child: const Text("Next Question",
+                      style: TextStyle(fontSize: 15)),
+                ),
               )
             ],
           ),
