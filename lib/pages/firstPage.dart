@@ -135,6 +135,20 @@ class _FirstPageState extends State<FirstPage> {
                 },
               ),
               const SizedBox(height: 25),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['correct_answer'],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
               Answer(),
               Answer(),
               Answer(),
