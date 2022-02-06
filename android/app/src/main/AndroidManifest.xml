@@ -2,7 +2,7 @@
     package="com.example.quiz_app">
    <uses-permission android:name="android.permission.INTERNET" />
    <application
-        android:label="Quizs"
+        android:label="Quiz Game"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
