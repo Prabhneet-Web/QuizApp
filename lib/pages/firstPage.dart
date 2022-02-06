@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'dart:async' show Future;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter/services.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/assets/widgets/answers.dart';
 
@@ -142,6 +139,48 @@ class _FirstPageState extends State<FirstPage> {
                     return Text(
                         snapshot.data!.questions[_questionIndex]
                             ['correct_answer'],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['incorrect_answers'][0],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['incorrect_answers'][1],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['incorrect_answers'][2],
                         style: const TextStyle(fontSize: 17));
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
