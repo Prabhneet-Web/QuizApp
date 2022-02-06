@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:async' show Future;
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/assets/widgets/answers.dart';
@@ -52,7 +53,13 @@ class Album {
   factory Album.fromJson(Map<String, dynamic> json) {
     var list = json['results'] as List;
 
-    List<dynamic> itemsList = list.map((i) => (i)).toList();
+    List<dynamic> itemsList = list.map((i) {
+      List<dynamic> answers = i["incorrect_answers"];
+      answers.add(i["correct_answer"]);
+      answers.shuffle(Random());
+      i["incorrect_answers"] = answers;
+      return i;
+    }).toList();
 
     return Album(
       questions: itemsList,
@@ -138,20 +145,6 @@ class _FirstPageState extends State<FirstPage> {
                   if (snapshot.hasData) {
                     return Text(
                         snapshot.data!.questions[_questionIndex]
-                            ['correct_answer'],
-                        style: const TextStyle(fontSize: 17));
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  return const CircularProgressIndicator();
-                },
-              ),
-              FutureBuilder<Album>(
-                future: futureAlbum,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(
-                        snapshot.data!.questions[_questionIndex]
                             ['incorrect_answers'][0],
                         style: const TextStyle(fontSize: 17));
                   } else if (snapshot.hasError) {
@@ -181,6 +174,34 @@ class _FirstPageState extends State<FirstPage> {
                     return Text(
                         snapshot.data!.questions[_questionIndex]
                             ['incorrect_answers'][2],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['incorrect_answers'][3],
+                        style: const TextStyle(fontSize: 17));
+                  } else if (snapshot.hasError) {
+                    return Text('${snapshot.error}');
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
+              FutureBuilder<Album>(
+                future: futureAlbum,
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text(
+                        snapshot.data!.questions[_questionIndex]
+                            ['correct_answer'],
                         style: const TextStyle(fontSize: 17));
                   } else if (snapshot.hasError) {
                     return Text('${snapshot.error}');
