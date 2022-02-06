@@ -1,4 +1,0 @@
-#Sun Feb 06 17:16:16 IST 2022
-base.0=/Users/prabhneetnarula/Development/Projects/VS Code /App Dev/QuizApp/build/app/intermediates/dex/release/minifyReleaseWithR8/classes.dex
-renamed.0=classes.dex
-path.0=classes.dex

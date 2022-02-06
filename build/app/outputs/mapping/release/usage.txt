@@ -2124,9 +2124,9 @@ kotlin.sequences.SequencesKt__SequenceBuilderKt$sequence$$inlined$Sequence$1
 androidx.fragment.app.FragmentManagerViewModel
 androidx.customview.widget.ExploreByTouchHelper
 androidx.annotation.CheckResult
-io.flutter.embedding.engine.systemchannels.PlatformChannel:
-    private static final java.lang.String TAG
 io.flutter.embedding.engine.systemchannels.PlatformViewsChannel:
+    private static final java.lang.String TAG
+io.flutter.embedding.engine.systemchannels.PlatformChannel:
     private static final java.lang.String TAG
 kotlin.Suppress
 kotlin.collections.GroupingKt
@@ -2160,8 +2160,8 @@ androidx.core.view.ContentInfoCompat$Flags
 kotlin.collections.ArraysKt___ArraysKt$asIterable$$inlined$Iterable$4
 androidx.core.content.LocusIdCompat
 androidx.core.view.accessibility.AccessibilityViewCommand$ScrollToPositionArguments
-kotlin.coroutines.experimental.CombinedContext$toString$1
 kotlin.coroutines.experimental.SafeContinuation
+kotlin.coroutines.experimental.CombinedContext$toString$1
 kotlin.jvm.internal.EnumCompanionObject
 androidx.core.app.TaskStackBuilder$SupportParentable
 androidx.core.view.WindowInsetsAnimationCompat$Impl21$Impl21OnApplyWindowInsetsListener$3
@@ -2873,8 +2873,8 @@ androidx.customview.widget.ExploreByTouchHelper$1
 androidx.core.graphics.PathSegment
 androidx.core.app.SharedElementCallback
 androidx.core.graphics.drawable.IconCompat$IconType
-kotlin.UnsignedKt
 kotlin.io.AccessDeniedException
+kotlin.UnsignedKt
 android.support.v4.os.IResultReceiver
 androidx.core.graphics.drawable.RoundedBitmapDrawable
 kotlin.SafePublicationLazyImpl
@@ -2939,8 +2939,8 @@ io.flutter.plugin.common.BinaryCodec
 kotlin.reflect.KTypeParameter
 androidx.core.text.PrecomputedTextCompat
 kotlin.jvm.functions.Function5
-kotlin.text.Regex$findAll$1
 kotlin.text.StringsKt__StringsKt
+kotlin.text.Regex$findAll$1
 kotlin.contracts.Returns
 androidx.core.telephony.TelephonyManagerCompat
 io.flutter.Log:
@@ -3062,5 +3062,5 @@ io.flutter.Log:
     public static int INFO
     public static int VERBOSE
     public static int WARN
-io.flutter.plugin.common.BinaryMessenger$-CC
 io.flutter.plugin.platform.PlatformView$-CC
+io.flutter.plugin.common.BinaryMessenger$-CC

@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:async' show Future;
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/assets/widgets/answers.dart';
@@ -80,19 +81,18 @@ class _FirstPageState extends State<FirstPage> {
   int _questionIndex = 0;
   int _totalScore = 0;
 
-  // final pageController = usePageController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 15,
         automaticallyImplyLeading: false,
         shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
                 bottomLeft: Radius.circular(100),
                 bottomRight: Radius.circular(100))),
         bottom: const PreferredSize(
-          preferredSize: Size.fromHeight(40),
+          preferredSize: Size.fromHeight(28),
           child: SizedBox(),
         ),
         backgroundColor: const Color.fromARGB(255, 200, 152, 67),
@@ -109,14 +109,14 @@ class _FirstPageState extends State<FirstPage> {
                   return const PopupMenuItem(child: Text("Hello"));
                 });
               }),
-          const SizedBox(width: 15)
+          const SizedBox(width: 30)
         ],
       ),
       body: Container(
-        alignment: Alignment.center,
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, right: 20.0, top: 35),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -124,85 +124,49 @@ class _FirstPageState extends State<FirstPage> {
                   if (__scoreTracker.length > 0) ...__scoreTracker
                 ],
               ),
-              const SizedBox(height: 30),
+              const SizedBox(height: 15),
               FutureBuilder<Album>(
-                future: futureAlbum,
-                builder: (context, snapshot) {
-                  if (snapshot.hasData) {
-                    return Text(
-                        snapshot.data!.questions[_questionIndex]['question'],
-                        style: const TextStyle(fontSize: 17));
-                  } else if (snapshot.hasError) {
-                    return Text('${snapshot.error}');
-                  }
-                  return const CircularProgressIndicator();
-                },
-              ),
-              const SizedBox(height: 25),
-              Answer(
-                options: FutureBuilder<Album>(
                   future: futureAlbum,
                   builder: (context, snapshot) {
                     if (snapshot.hasData) {
-                      return Text(
-                          snapshot.data!.questions[_questionIndex]
-                              ['incorrect_answers'][0],
-                          style: const TextStyle(fontSize: 17));
+                      return Column(
+                        children: [
+                          Container(
+                            height: 95,
+                            child: Text(
+                                "${_questionIndex + 1}. " +
+                                    snapshot.data!.questions[_questionIndex]
+                                        ['question'],
+                                style: const TextStyle(
+                                    fontSize: 19.5,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          const SizedBox(height: 20),
+                          Answer(
+                              options: Text(
+                                  snapshot.data!.questions[_questionIndex]
+                                      ['incorrect_answers'][0])),
+                          Answer(
+                              options: Text(
+                                  snapshot.data!.questions[_questionIndex]
+                                      ['incorrect_answers'][1])),
+                          Answer(
+                              options: Text(
+                                  snapshot.data!.questions[_questionIndex]
+                                      ['incorrect_answers'][2])),
+                          Answer(
+                              options: Text(
+                                  snapshot.data!.questions[_questionIndex]
+                                      ['incorrect_answers'][3])),
+                        ],
+                      );
                     } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    }
-                    return const CircularProgressIndicator();
-                  },
-                ),
-              ),
-              Answer(
-                options: FutureBuilder<Album>(
-                  future: futureAlbum,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
                       return Text(
-                          snapshot.data!.questions[_questionIndex]
-                              ['incorrect_answers'][1],
-                          style: const TextStyle(fontSize: 17));
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
+                          'Network Error! Please check your connection!');
                     }
-                    return const CircularProgressIndicator();
-                  },
-                ),
-              ),
-              Answer(
-                options: FutureBuilder<Album>(
-                  future: futureAlbum,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Text(
-                          snapshot.data!.questions[_questionIndex]
-                              ['incorrect_answers'][2],
-                          style: const TextStyle(fontSize: 17));
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    }
-                    return const CircularProgressIndicator();
-                  },
-                ),
-              ),
-              Answer(
-                options: FutureBuilder<Album>(
-                  future: futureAlbum,
-                  builder: (context, snapshot) {
-                    if (snapshot.hasData) {
-                      return Text(
-                          snapshot.data!.questions[_questionIndex]
-                              ['incorrect_answers'][3],
-                          style: const TextStyle(fontSize: 17));
-                    } else if (snapshot.hasError) {
-                      return Text('${snapshot.error}');
-                    }
-                    return const CircularProgressIndicator();
-                  },
-                ),
-              ),
+                    return const CircularProgressIndicator(
+                        color: Color.fromARGB(255, 200, 152, 67));
+                  }),
               const SizedBox(height: 20),
               Container(
                 decoration: BoxDecoration(
