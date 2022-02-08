@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'dart:async' show Future;
 import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:quiz_app/assets/widgets/answers.dart';
@@ -20,7 +19,7 @@ Future<Album> fetchAlbum() async {
   if (response.statusCode == 200) {
     return Album.fromJson(jsonDecode(response.body));
   } else {
-    throw Exception('Failed to load album');
+    throw Exception('Failed to load Questions and Answers');
   }
 }
 
@@ -80,6 +79,24 @@ class _FirstPageState extends State<FirstPage> {
   List<Icon> __scoreTracker = [];
   int _questionIndex = 0;
   int _totalScore = 0;
+  bool answerWasSelected = false;
+  bool endOfQuiz = false;
+
+  void _questionAnswered(bool answerScore) {
+    //Answer Was Selected
+    answerWasSelected = true;
+    //Check if answer was correct
+    if (answerScore) {
+      _totalScore++;
+    }
+    //Adding to the score tracker on the top
+    __scoreTracker
+        .add(answerScore ? Icon(Icons.check_box_outlined) : Icon(Icons.clear));
+    //When the quiz ends
+    if (_questionIndex + 1 == 10) {
+      endOfQuiz = true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -120,7 +137,7 @@ class _FirstPageState extends State<FirstPage> {
             children: [
               Row(
                 children: [
-                  if (__scoreTracker.length == 0) SizedBox(height: 20),
+                  if (__scoreTracker.length == 0) SizedBox(height: 22),
                   if (__scoreTracker.length > 0) ...__scoreTracker
                 ],
               ),
@@ -131,7 +148,7 @@ class _FirstPageState extends State<FirstPage> {
                     if (snapshot.hasData) {
                       return Column(
                         children: [
-                          Container(
+                          SizedBox(
                             height: 95,
                             child: Text(
                                 "${_questionIndex + 1}. " +
@@ -143,29 +160,97 @@ class _FirstPageState extends State<FirstPage> {
                           ),
                           const SizedBox(height: 20),
                           Answer(
-                              options: Text(
-                                  snapshot.data!.questions[_questionIndex]
-                                      ['incorrect_answers'][0])),
+                            options: Text(
+                                snapshot.data!.questions[_questionIndex]
+                                    ['incorrect_answers'][0]),
+                            optionColor: answerWasSelected
+                                ? (snapshot.data!.questions[_questionIndex]
+                                            ['incorrect_answers'][0] ==
+                                        snapshot.data!.questions[_questionIndex]
+                                            ['correct_answer'])
+                                    ? Colors.green
+                                    : Colors.red
+                                : Colors.grey,
+                            answerTap: () {
+                              _questionAnswered(
+                                  (snapshot.data!.questions[_questionIndex]
+                                          ['incorrect_answers'][0] ==
+                                      snapshot.data!.questions[_questionIndex]
+                                          ['correct_answer']));
+                            },
+                          ),
                           Answer(
-                              options: Text(
-                                  snapshot.data!.questions[_questionIndex]
-                                      ['incorrect_answers'][1])),
+                            options: Text(
+                                snapshot.data!.questions[_questionIndex]
+                                    ['incorrect_answers'][1]),
+                            optionColor: answerWasSelected
+                                ? (snapshot.data!.questions[_questionIndex]
+                                            ['incorrect_answers'][1] ==
+                                        snapshot.data!.questions[_questionIndex]
+                                            ['correct_answer'])
+                                    ? Colors.green
+                                    : Colors.red
+                                : Colors.grey,
+                            answerTap: () {
+                              _questionAnswered(
+                                  (snapshot.data!.questions[_questionIndex]
+                                          ['incorrect_answers'][1] ==
+                                      snapshot.data!.questions[_questionIndex]
+                                          ['correct_answer']));
+                            },
+                          ),
                           Answer(
-                              options: Text(
-                                  snapshot.data!.questions[_questionIndex]
-                                      ['incorrect_answers'][2])),
+                            options: Text(
+                                snapshot.data!.questions[_questionIndex]
+                                    ['incorrect_answers'][2]),
+                            optionColor: answerWasSelected
+                                ? (snapshot.data!.questions[_questionIndex]
+                                            ['incorrect_answers'][2] ==
+                                        snapshot.data!.questions[_questionIndex]
+                                            ['correct_answer'])
+                                    ? Colors.green
+                                    : Colors.red
+                                : Colors.grey,
+                            answerTap: () {
+                              _questionAnswered(
+                                  (snapshot.data!.questions[_questionIndex]
+                                          ['incorrect_answers'][2] ==
+                                      snapshot.data!.questions[_questionIndex]
+                                          ['correct_answer']));
+                            },
+                          ),
                           Answer(
-                              options: Text(
-                                  snapshot.data!.questions[_questionIndex]
-                                      ['incorrect_answers'][3])),
+                            options: Text(
+                                snapshot.data!.questions[_questionIndex]
+                                    ['incorrect_answers'][3]),
+                            optionColor: answerWasSelected
+                                ? (snapshot.data!.questions[_questionIndex]
+                                            ['incorrect_answers'][3] ==
+                                        snapshot.data!.questions[_questionIndex]
+                                            ['correct_answer'])
+                                    ? Colors.green
+                                    : Colors.red
+                                : Colors.grey,
+                            answerTap: () {
+                              _questionAnswered(
+                                  (snapshot.data!.questions[_questionIndex]
+                                          ['incorrect_answers'][3] ==
+                                      snapshot.data!.questions[_questionIndex]
+                                          ['correct_answer']));
+                            },
+                          ),
                         ],
                       );
                     } else if (snapshot.hasError) {
-                      return Text(
+                      return const Text(
                           'Network Error! Please check your connection!');
                     }
-                    return const CircularProgressIndicator(
-                        color: Color.fromARGB(255, 200, 152, 67));
+                    return const Padding(
+                      padding: EdgeInsets.only(top: 149, bottom: 149),
+                      child: CircularProgressIndicator(
+                          color: Color.fromARGB(255, 200, 152, 67)),
+                    );
+                    ;
                   }),
               const SizedBox(height: 20),
               Container(
@@ -176,10 +261,14 @@ class _FirstPageState extends State<FirstPage> {
                   onPressed: () {
                     setState(() {
                       _questionIndex++;
-                      if (_questionIndex >= 9) _questionIndex = 9;
+                      if (_questionIndex >= 9) {
+                        _questionIndex = 9;
+                        endOfQuiz = true;
+                      }
+                      ;
                     });
                   },
-                  child: const Text("Next Question",
+                  child: Text(endOfQuiz ? "Restart Quiz" : "Next Question",
                       style: TextStyle(fontSize: 15)),
                 ),
               )

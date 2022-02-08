@@ -2160,8 +2160,8 @@ androidx.core.view.ContentInfoCompat$Flags
 kotlin.collections.ArraysKt___ArraysKt$asIterable$$inlined$Iterable$4
 androidx.core.content.LocusIdCompat
 androidx.core.view.accessibility.AccessibilityViewCommand$ScrollToPositionArguments
-kotlin.coroutines.experimental.SafeContinuation
 kotlin.coroutines.experimental.CombinedContext$toString$1
+kotlin.coroutines.experimental.SafeContinuation
 kotlin.jvm.internal.EnumCompanionObject
 androidx.core.app.TaskStackBuilder$SupportParentable
 androidx.core.view.WindowInsetsAnimationCompat$Impl21$Impl21OnApplyWindowInsetsListener$3
@@ -2873,8 +2873,8 @@ androidx.customview.widget.ExploreByTouchHelper$1
 androidx.core.graphics.PathSegment
 androidx.core.app.SharedElementCallback
 androidx.core.graphics.drawable.IconCompat$IconType
-kotlin.io.AccessDeniedException
 kotlin.UnsignedKt
+kotlin.io.AccessDeniedException
 android.support.v4.os.IResultReceiver
 androidx.core.graphics.drawable.RoundedBitmapDrawable
 kotlin.SafePublicationLazyImpl
@@ -2939,8 +2939,8 @@ io.flutter.plugin.common.BinaryCodec
 kotlin.reflect.KTypeParameter
 androidx.core.text.PrecomputedTextCompat
 kotlin.jvm.functions.Function5
-kotlin.text.StringsKt__StringsKt
 kotlin.text.Regex$findAll$1
+kotlin.text.StringsKt__StringsKt
 kotlin.contracts.Returns
 androidx.core.telephony.TelephonyManagerCompat
 io.flutter.Log:

@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
 
-class Answer extends StatefulWidget {
+class Answer extends StatelessWidget {
   Widget options;
-  Answer({
-    Key? key,
-    required this.options,
-  }) : super(key: key);
+  final Color optionColor;
+  final Function answerTap;
+  Answer(
+      {Key? key,
+      required this.options,
+      required this.optionColor,
+      required this.answerTap})
+      : super(key: key);
 
-  @override
-  State<Answer> createState() => _AnswerState();
-}
+  int currentIndex = 0;
 
-class _AnswerState extends State<Answer> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: answerTap(),
+      borderRadius: BorderRadius.circular(20),
       child: Container(
           padding: const EdgeInsets.all(13.0),
           margin: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
           width: double.infinity,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
+              // color: widget.optionColor,
+              border: Border.all(color: optionColor),
               borderRadius: BorderRadius.circular(20)),
-          child: widget.options),
+          child: options),
     );
   }
 }
