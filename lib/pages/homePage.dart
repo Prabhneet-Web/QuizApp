@@ -33,8 +33,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         context,
         PageTransition(
             child: const FirstPage(),
-            type: PageTransitionType.rotate,
-            alignment: Alignment.bottomCenter)));
+            type: PageTransitionType.size,
+            alignment: Alignment.bottomLeft
+            )));
   }
 
   @override
