@@ -82,22 +82,6 @@ class _FirstPageState extends State<FirstPage> {
   bool answerWasSelected = false;
   bool endOfQuiz = false;
 
-  void _questionAnswered(bool answerScore) {
-    //Answer Was Selected
-    answerWasSelected = true;
-    //Check if answer was correct
-    if (answerScore) {
-      _totalScore++;
-    }
-    //Adding to the score tracker on the top
-    __scoreTracker
-        .add(answerScore ? Icon(Icons.check_box_outlined) : Icon(Icons.clear));
-    //When the quiz ends
-    if (_questionIndex + 1 == 10) {
-      endOfQuiz = true;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,8 +121,8 @@ class _FirstPageState extends State<FirstPage> {
             children: [
               Row(
                 children: [
-                  if (__scoreTracker.length == 0) SizedBox(height: 22),
-                  if (__scoreTracker.length > 0) ...__scoreTracker
+                  if (__scoreTracker.isEmpty) const SizedBox(height: 23.5),
+                  if (__scoreTracker.isNotEmpty) ...__scoreTracker
                 ],
               ),
               const SizedBox(height: 15),
@@ -171,13 +155,6 @@ class _FirstPageState extends State<FirstPage> {
                                     ? Colors.green
                                     : Colors.red
                                 : Colors.grey,
-                            answerTap: () {
-                              _questionAnswered(
-                                  (snapshot.data!.questions[_questionIndex]
-                                          ['incorrect_answers'][0] ==
-                                      snapshot.data!.questions[_questionIndex]
-                                          ['correct_answer']));
-                            },
                           ),
                           Answer(
                             options: Text(
@@ -191,13 +168,6 @@ class _FirstPageState extends State<FirstPage> {
                                     ? Colors.green
                                     : Colors.red
                                 : Colors.grey,
-                            answerTap: () {
-                              _questionAnswered(
-                                  (snapshot.data!.questions[_questionIndex]
-                                          ['incorrect_answers'][1] ==
-                                      snapshot.data!.questions[_questionIndex]
-                                          ['correct_answer']));
-                            },
                           ),
                           Answer(
                             options: Text(
@@ -211,13 +181,6 @@ class _FirstPageState extends State<FirstPage> {
                                     ? Colors.green
                                     : Colors.red
                                 : Colors.grey,
-                            answerTap: () {
-                              _questionAnswered(
-                                  (snapshot.data!.questions[_questionIndex]
-                                          ['incorrect_answers'][2] ==
-                                      snapshot.data!.questions[_questionIndex]
-                                          ['correct_answer']));
-                            },
                           ),
                           Answer(
                             options: Text(
@@ -231,13 +194,6 @@ class _FirstPageState extends State<FirstPage> {
                                     ? Colors.green
                                     : Colors.red
                                 : Colors.grey,
-                            answerTap: () {
-                              _questionAnswered(
-                                  (snapshot.data!.questions[_questionIndex]
-                                          ['incorrect_answers'][3] ==
-                                      snapshot.data!.questions[_questionIndex]
-                                          ['correct_answer']));
-                            },
                           ),
                         ],
                       );
@@ -246,7 +202,7 @@ class _FirstPageState extends State<FirstPage> {
                           'Network Error! Please check your connection!');
                     }
                     return const Padding(
-                      padding: EdgeInsets.only(top: 149, bottom: 149),
+                      padding: EdgeInsets.only(top: 149.5, bottom: 149.5),
                       child: CircularProgressIndicator(
                           color: Color.fromARGB(255, 200, 152, 67)),
                     );

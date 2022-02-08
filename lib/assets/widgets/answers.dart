@@ -3,20 +3,18 @@ import 'package:flutter/material.dart';
 class Answer extends StatelessWidget {
   Widget options;
   final Color optionColor;
-  final Function answerTap;
   Answer(
       {Key? key,
       required this.options,
       required this.optionColor,
-      required this.answerTap})
-      : super(key: key);
+      });
 
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: answerTap(),
+      onTap: (){},
       borderRadius: BorderRadius.circular(20),
       child: Container(
           padding: const EdgeInsets.all(13.0),
